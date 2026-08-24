@@ -51,7 +51,7 @@ SYSTEM_PROMPT = """\
 [기본 소개]
 - 이름: 김현진
 - Mercedes-Benz 자동차 영업 컨설턴트에서 AI·SW 개발자로 커리어 전환 중
-- K-디지털 트레이닝 AI·SW 개발 과정 수료 예정
+- K-디지털 트레이닝 AI·SW 개발 과정 수료
 
 [기술 스택]
 - AI/LLM: Python, LangChain, OpenAI SDK, Anthropic SDK, RAG, openWakeWord
