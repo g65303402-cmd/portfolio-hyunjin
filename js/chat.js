@@ -1,7 +1,7 @@
 // AI 챗봇 위젯 로직
 // 백엔드(FastAPI + Claude API) 배포 후, 아래 API_BASE 값을 실제 배포 주소로 교체하세요.
 // 예: const API_BASE = "https://portfolio-hyunjin-chatbot.onrender.com";
-const API_BASE = "https://YOUR-RENDER-APP.onrender.com";
+const API_BASE = "https://portfolio-hyunjin.onrender.com";
 
 const chatToggle = document.getElementById("chatToggle");
 const chatPanel = document.getElementById("chatPanel");
