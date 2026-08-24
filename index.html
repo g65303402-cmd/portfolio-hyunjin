@@ -313,6 +313,32 @@
   </div>
 </footer>
 
+<!-- AI 챗봇 위젯 -->
+<div class="chat-widget" id="chatWidget">
+  <button class="chat-toggle" id="chatToggle" aria-label="AI 어시스턴트 열기">
+    <span class="chat-toggle-icon">💬</span>
+  </button>
+  <div class="chat-panel" id="chatPanel" hidden>
+    <div class="chat-header">
+      <div>
+        <p class="chat-title">김현진 AI 어시스턴트</p>
+        <p class="chat-subtitle">포트폴리오에 대해 무엇이든 물어보세요</p>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="닫기">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-bubble chat-bubble-bot">
+        안녕하세요! 김현진의 포트폴리오 AI 어시스턴트입니다. 프로젝트나 기술 스택에 대해 궁금한 점을 물어보세요.
+      </div>
+    </div>
+    <form class="chat-input-row" id="chatForm">
+      <input type="text" id="chatInput" class="chat-input" placeholder="메시지를 입력하세요" autocomplete="off" maxlength="500" />
+      <button type="submit" class="chat-send" aria-label="전송">↑</button>
+    </form>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
+<script src="js/chat.js"></script>
 </body>
 </html>
