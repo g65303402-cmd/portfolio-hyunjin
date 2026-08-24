@@ -538,6 +538,12 @@ ul { list-style: none; margin: 0; padding: 0; }
   overflow: hidden;
 }
 
+/* 자체 display:flex 규칙이 hidden 속성의 기본 동작(display:none)을 덮어써서
+   닫기/열기가 먹지 않는 문제를 방지 */
+.chat-panel[hidden] {
+  display: none;
+}
+
 .chat-header {
   display: flex;
   align-items: flex-start;
