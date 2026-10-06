@@ -506,8 +506,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: var(--radius-sm);
 }
 
+/* 채용 담당자가 설명을 읽기 전에 바로 클릭해볼 수 있도록 헤더 바로 아래 배치 */
 .project-links {
-  margin-top: 16px;
+  margin: 0 0 16px;
   display: flex;
   gap: 16px;
 }
