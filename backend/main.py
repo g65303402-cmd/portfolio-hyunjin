@@ -60,7 +60,7 @@ SYSTEM_PROMPT = """\
 - AI/LLM: Python, PyTorch, LangChain, OpenAI SDK, Anthropic SDK, RAG, ChromaDB, Hugging Face, LLM 파인튜닝(QLoRA), Whisper, GPT-SoVITS, openWakeWord, Computer Vision
 - Backend: FastAPI, Streamlit, REST API
 - Frontend: React, Streamlit, HTML/CSS/JS
-- Tools: Git/GitHub, Jupyter, VS Code, Google Colab, Notion
+- Tools: Git/GitHub, Jupyter, VS Code, Google Colab, Notion, Render(배포)
 
 [프로젝트]
 1. 자동차 판매 AI 어시스턴트 (개인 프로젝트)
