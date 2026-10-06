@@ -159,7 +159,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 
 .eyebrow {
@@ -213,11 +213,17 @@ ul { list-style: none; margin: 0; padding: 0; }
   max-width: 160px;
 }
 
+/* 사진+소개를 카드로 묶어 빈 공간에 떠 보이지 않게 함 (다른 섹션의 카드 톤과 통일) */
 .hero-photo {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  margin-top: 6px;
+  padding: 20px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  border-radius: var(--radius);
 }
 
 .photo-frame {
