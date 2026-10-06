@@ -275,7 +275,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; text-align: left; }
-  .hero-photo { order: -1; margin-bottom: 8px; align-items: flex-start; }
+  .hero-photo { margin-top: 28px; align-items: flex-start; }
   .hero-caption { text-align: left; max-width: 420px; }
 }
 
