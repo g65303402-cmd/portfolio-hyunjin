@@ -194,10 +194,26 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .hero-actions { display: flex; gap: 14px; margin-bottom: 28px; }
 
-.hero-meta {
+/* 채용 담당자가 핵심 숫자를 바로 스캔할 수 있도록 하는 통계 행 */
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-stat { display: flex; flex-direction: column; gap: 4px; }
+
+.hero-stat-num {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--mint);
+}
+
+.hero-stat-label {
+  font-size: 12.5px;
   color: var(--text-faint);
+  max-width: 140px;
 }
 
 .hero-photo { display: flex; justify-content: center; }
@@ -251,42 +267,74 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .about { padding: 64px 0; border-top: 1px solid var(--border-soft); }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
 .about-lead {
   font-size: 19px;
   color: var(--text);
   line-height: 1.7;
+  max-width: 720px;
 }
 
-.about-facts { display: flex; flex-direction: column; gap: 18px; }
+/* ==========================================================================
+   커리어 여정 (타임라인)
+   ========================================================================== */
 
-.fact {
+.journey { padding: 64px 0; border-top: 1px solid var(--border-soft); }
+
+.timeline {
+  position: relative;
   display: flex;
-  gap: 14px;
-  padding: 16px;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  flex-direction: column;
+  gap: 28px;
+  padding-left: 28px;
 }
 
-.fact-num {
+/* 세로 연결선 */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item { position: relative; }
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+
+.timeline-dot-end { background: var(--mint); border-color: var(--mint); }
+
+.timeline-title {
+  margin: 0 0 6px;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.timeline-date {
   font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 13px;
-  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-faint);
 }
 
-.fact-label { color: var(--text-dim); font-size: 14.5px; }
+.timeline-desc { margin: 0; color: var(--text-dim); font-size: 14.5px; max-width: 640px; }
 
-@media (max-width: 760px) {
-  .about-grid { grid-template-columns: 1fr; }
-}
+.timeline-item-end .timeline-title { color: var(--mint); }
 
 /* ==========================================================================
    스킬
@@ -363,13 +411,42 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 14px;
 }
 
-.project-head h3 { margin: 0 0 4px; font-size: 20px; }
+.project-head h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .project-type {
   margin: 0;
   font-family: var(--font-mono);
   font-size: 12.5px;
   color: var(--accent);
+}
+
+/* 대표 프로젝트 강조 */
+.project-featured { border-color: var(--accent); }
+
+.featured-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--mint);
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+/* 채용 담당자가 설명을 다 읽지 않아도 성과를 바로 볼 수 있는 한 줄 요약 */
+.project-highlight {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mint);
 }
 
 .project-desc {

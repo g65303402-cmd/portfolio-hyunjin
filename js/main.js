@@ -15,12 +15,6 @@ const revealObserver = new IntersectionObserver(
 
 revealTargets.forEach((el) => revealObserver.observe(el));
 
-// 프로젝트 카드도 순차적으로 나타나도록 리빌 대상에 포함
-document.querySelectorAll(".project-card, .fact").forEach((el) => {
-  el.setAttribute("data-reveal", "");
-  revealObserver.observe(el);
-});
-
 // 네비게이션 바: 스크롤 시 배경 강조
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => {
