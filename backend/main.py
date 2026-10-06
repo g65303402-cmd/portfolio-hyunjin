@@ -57,7 +57,7 @@ SYSTEM_PROMPT = """\
 - 2026 제8회 첨단산업·디지털 핵심 실무인재 양성훈련 해커톤 자유과제 부문 기술혁신상 수상 (2026.09.04, 팀 공장수호대)
 
 [기술 스택]
-- AI/LLM: Python, LangChain, OpenAI SDK, Anthropic SDK, RAG, openWakeWord
+- AI/LLM: Python, PyTorch, LangChain, OpenAI SDK, Anthropic SDK, RAG, ChromaDB, Hugging Face, LLM 파인튜닝(QLoRA), Whisper, GPT-SoVITS, openWakeWord, Computer Vision
 - Backend: FastAPI, Streamlit, REST API
 - Frontend: React, Streamlit, HTML/CSS/JS
 - Tools: Git/GitHub, Jupyter, VS Code, Google Colab, Notion
@@ -84,7 +84,7 @@ SYSTEM_PROMPT = """\
    - LGAI EXAONE-3.0-7.8B-Instruct를 QLoRA(r=16, alpha=32)로 파인튜닝
    - 12개 감정 카테고리, 981개 대화 데이터로 학습 (최적 체크포인트 loss 0.3047)
    - ChromaDB + KR-SBERT 임베딩으로 RAG 구축, 유사 대화 예시 3개를 few-shot으로 주입
-   - Python, RAG, 프롬프트 엔지니어링, 모델 평가, API 서버 사용
+   - Python, PyTorch, RAG, 프롬프트 엔지니어링, 모델 평가, API 서버 사용
 
 [연락처]
 - 이메일: kimhyunjin1356@kakao.com
