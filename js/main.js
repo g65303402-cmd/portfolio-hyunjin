@@ -19,7 +19,7 @@ revealTargets.forEach((el) => revealObserver.observe(el));
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 8) {
-    nav.style.borderBottomColor = "rgba(110, 139, 255, 0.25)";
+    nav.style.borderBottomColor = "rgba(124, 147, 255, 0.25)";
   } else {
     nav.style.borderBottomColor = "";
   }
