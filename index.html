@@ -154,7 +154,7 @@
           <div class="timeline-dot timeline-dot-end"></div>
           <div class="timeline-body">
             <p class="timeline-title">AI 컨베이어 벨트 안전 시스템 해커톤 — 기술혁신상 수상<span class="timeline-date">2026.09.04 · 제8회 첨단산업·디지털 핵심 실무인재 양성훈련 해커톤</span></p>
-            <p class="timeline-desc">팀 공장수호대(김현진·김가람·박은희·정재승·정재영)로 참가해 자유과제 부문 기술혁신상을 수상했습니다. 백엔드 통합 담당으로 제스처·음성·위험구역 트리플 트리거 안전 정지 API를 개발했습니다.</p>
+            <p class="timeline-desc">팀 공장수호대(김현진·김가람·박은희·정재승·정재영)로 참가해 자유과제 부문 기술혁신상을 수상했습니다. 팀장으로 YOLO 기반 위험구역 감지와 Vision LLM 기반 사고 리포트 자동화를 맡아 개발했습니다.</p>
           </div>
         </div>
       </div>
@@ -239,19 +239,21 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/g65303402-cmd/factoryguard" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://6a5ee25683a6563222ff2790--leafy-pixie-0e5a33.netlify.app/" target="_blank" rel="noopener">데모 ↗</a>
           </div>
-          <p class="project-highlight">핵심 성과 — 해커톤 자유과제 부문 기술혁신상 수상, 트리플 트리거 안전 정지 API 백엔드 담당</p>
+          <p class="project-highlight">핵심 성과 — 해커톤 자유과제 부문 기술혁신상 수상, 팀장 · Vision AI·Vision LLM 개발 담당</p>
           <p class="project-desc">
             제스처, 음성, 위험구역 접근을 동시에 감지하는 트리플 트리거 방식의
             AI 기반 컨베이어 벨트 안전 정지 시스템입니다.
           </p>
           <ul class="project-points">
-            <li>백엔드 통합 담당 — 제스처·음성·위험구역 트리플 트리거 정지 API 개발</li>
-            <li>Vision AI, RAG/음성 인식, 프론트엔드 대시보드 팀원들과 협업</li>
-            <li>제출 문서의 기술 확장 로드맵 작성 및 반복 검토 주도</li>
+            <li>YOLO(yolo26n)로 사람을 탐지해 위험구역 폴리곤과의 겹침 비율로 접근을 판정 — 초기 OpenCV 배경차분(MOG2) 방식은 벨트 움직임 오탐·정지 인물 미검출 문제가 있어 실측 테스트로 확인 후 YOLO로 전환</li>
+            <li>이벤트 발생 프레임만 OpenAI Vision API(GPT-4o-mini)로 분석해 상황 요약·위험도·근거를 생성(15초 쿨다운으로 비용 관리), 사고 이미지 기반 6개 항목 리포트 생성 API 구현</li>
+            <li>RAG가 검색한 법령 근거만으로 리포트 문단을 작성하는 프롬프트 설계 — 근거에 없는 조항·수치 생성 방지, 감지→RAG→LLM 파이프라인 실패 시에도 감지 흐름이 끊기지 않도록 예외 처리</li>
+            <li>팀장으로 기획 총괄 및 발표 자료·발표 대본 제작</li>
           </ul>
           <div class="project-tags">
-            <span>Python</span><span>FastAPI</span><span>Computer Vision</span><span>음성 인식</span>
+            <span>Python</span><span>FastAPI</span><span>YOLO</span><span>OpenAI Vision API</span><span>RAG</span>
           </div>
         </article>
 
