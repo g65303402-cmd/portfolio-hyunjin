@@ -474,7 +474,16 @@ h1, h2, h3, p { margin: 0; }
   flex-wrap: wrap;
   margin: 2px 0 4px;
 }
-.project-links .btn { min-height: 44px; padding: 0 18px; font-size: 14px; }
+.project-links .btn { min-height: 44px; padding: 0 18px; font-size: 14px; gap: 8px; }
+.project-links .btn-primary { box-shadow: 0 8px 20px -8px rgba(124, 147, 255, 0.7); }
+.project-links .btn-ghost {
+  background: #1a2030;
+  border-color: #4a5570;
+  color: #ffffff;
+  font-weight: 700;
+}
+.project-links .btn-ghost:hover { border-color: var(--accent); background: #1f2638; color: #ffffff; }
+.btn-icon { flex-shrink: 0; }
 
 /* 대표 프로젝트: 2열 (설명 + 스크린샷), 상단 액센트 라인 */
 .project-featured {
