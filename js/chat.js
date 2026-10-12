@@ -13,11 +13,22 @@ const chatInput = document.getElementById("chatInput");
 // 백엔드에 보낼 최근 대화 기록 (역할 + 내용)
 let history = [];
 
+// Render 무료 플랜은 일정 시간 미사용 시 서버가 꺼지고, 다음 요청에서
+// 다시 켜지는 데 수십 초가 걸린다(콜드 스타트). 챗봇을 열자마자 헬스체크를
+// 미리 보내 깨워두면, 실제로 메시지를 보낼 때쯤엔 서버가 깨어있을 확률이 높다.
+let warmupStarted = false;
+function warmUpServer() {
+  if (warmupStarted) return;
+  warmupStarted = true;
+  fetch(`${API_BASE}/api/health`).catch(() => {});
+}
+
 chatToggle.addEventListener("click", () => {
   const isHidden = chatPanel.hasAttribute("hidden");
   if (isHidden) {
     chatPanel.removeAttribute("hidden");
     chatInput.focus();
+    warmUpServer();
   } else {
     chatPanel.setAttribute("hidden", "");
   }
@@ -52,6 +63,12 @@ chatForm.addEventListener("submit", async (event) => {
 
   const loadingBubble = appendBubble("생각 중...", "bot");
 
+  // 응답이 늦어지면(콜드 스타트로 서버가 깨어나는 중일 가능성이 높음)
+  // 멈춘 것처럼 보이지 않도록 안내 문구로 바꿔준다.
+  const slowNotice = setTimeout(() => {
+    loadingBubble.textContent = "서버를 깨우는 중이에요. 최대 1분 정도 걸릴 수 있어요...";
+  }, 6000);
+
   try {
     const res = await fetch(`${API_BASE}/api/chat`, {
       method: "POST",
@@ -64,6 +81,7 @@ chatForm.addEventListener("submit", async (event) => {
     }
 
     const data = await res.json();
+    clearTimeout(slowNotice);
     loadingBubble.textContent = data.reply;
 
     // 대화 기록 업데이트 (최근 20개만 유지)
@@ -71,6 +89,7 @@ chatForm.addEventListener("submit", async (event) => {
     history.push({ role: "assistant", content: data.reply });
     history = history.slice(-20);
   } catch (err) {
+    clearTimeout(slowNotice);
     loadingBubble.remove();
     appendBubble(
       "죄송해요, 지금은 답변을 가져올 수 없어요. 잠시 후 다시 시도해주세요.",
