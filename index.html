@@ -276,12 +276,13 @@
             출근 시간대 빠른 정보 확인과 시각이 불편한 사용자의 접근성 개선을 목표로 개발했습니다.
           </p>
           <ul class="project-points">
-            <li>KWS(호출어 인식) 파인튜닝 담당 — 직접 녹음한 200개 데이터를 증강해 약 1,000개 학습 데이터 구축, 네거티브 데이터 학습과 연속 4회 감지 방식으로 오탐을 줄여 호출어 인식 정확도 0.97 달성</li>
+            <li>openWakeWord 모델 파인튜닝으로 호출어 "교통봇" 감지 모듈 개발 — Positive 데이터 200개를 직접 녹음·증강해 1,000개로 확장, Negative 데이터 1,325개 구성과 연속 4회 감지 방식으로 오탐 최소화해 정확도 0.97 달성</li>
+            <li>초기 호출어 "교통안내"는 일상 대화와 발음이 유사해 오탐이 잦았음 — 호출어를 "교통봇"으로 변경하고 유사 발음 네거티브 데이터를 추가해 재학습으로 해결</li>
             <li>Whisper 기반 STT + Levenshtein 유사도 비교로 정류소명 인식 오류 보완, 광주광역시 BIS 공공데이터 API 연동 (문서현)</li>
             <li>GPT-SoVITS 기반 TTS를 API 서버로 상주시켜 응답 시간을 20초에서 1~3초로 단축, Cloudflare Tunnel로 외부 접근 구성 (김가람)</li>
           </ul>
           <div class="project-tags">
-            <span>Python</span><span>openWakeWord</span><span>Whisper</span><span>GPT-SoVITS</span><span>공공데이터 API</span>
+            <span>Python</span><span>openWakeWord</span><span>ONNX</span><span>sounddevice</span><span>Whisper</span><span>GPT-SoVITS</span><span>공공데이터 API</span>
           </div>
         </article>
 
