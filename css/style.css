@@ -470,10 +470,9 @@ h1, h2, h3, p { margin: 0; }
 
 .project-links {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: auto;
-  padding-top: 4px;
+  margin: 2px 0 4px;
 }
 .project-links .btn { min-height: 44px; padding: 0 18px; font-size: 14px; }
 
