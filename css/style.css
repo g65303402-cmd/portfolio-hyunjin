@@ -535,12 +535,14 @@ h1, h2, h3, p { margin: 0; }
 
 .contact { padding: 96px 0 64px; }
 
+.contact .section-label { margin-bottom: 20px; }
+
 .contact-title {
   font-size: clamp(32px, 4.5vw, 52px);
   letter-spacing: -0.025em;
   line-height: 1.15;
   text-wrap: balance;
-  margin: 0 0 28px;
+  margin: 0 0 36px;
 }
 
 .contact-actions {
